@@ -1,4 +1,4 @@
-#weather-now {
+  #weather-now {
     text-align: center;
     font-size: 1.3em;
     margin-top: 0.5em;
@@ -9,17 +9,17 @@
   .weather-columns {
     display: flex;
     flex-wrap: nowrap;
+    margin-top: -0.25em;
   }
-  
-  
   .weather-data {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
+    font-size: 0.47em;
   }
   
   .weather-section.hourly {
-    margin-top: 0em;
     margin-bottom: 0em;
+    margin-right: 0.5em;
   }

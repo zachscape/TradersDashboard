@@ -46,7 +46,7 @@ function playAlarm() {
         audioFile = "media/loud-alarm.mp3";
         volume = 1.0;
     } else {
-        audioFile = "media/quiet-alarm.mp3";
+        audioFile = "media/ding.mp3";
         volume = 1.0;
     }
 
@@ -65,7 +65,7 @@ function playAlarm() {
 
     alarmTimeout = setTimeout(() => {
         stopAlarm();
-    }, 20000);
+    }, 2000);
 }
 
 

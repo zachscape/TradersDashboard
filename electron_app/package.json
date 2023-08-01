@@ -4,24 +4,30 @@
     "description": "Info Dashboard Electron App",
     "main": "main.js",
     "scripts": {
-      "start": "electron ."
+        "start": "electron .",
+        "postinstall": "electron-rebuild"
     },
     "dependencies": {
-      "axios": "^0.26.1",
-      "electron": "^16.0.7"
+        "axios": "^0.26.1",
+        "electron": "^16.0.7",
+        "node-pty": "^1.0.0",
+        "say": "^0.16.0",
+        "socket.io-client": "^4.7.1",
+        "xterm": "^5.2.1",
+        "xterm-addon-fit": "^0.7.0"
     },
     "devDependencies": {
-      "concurrently": "^7.0.0"
+        "concurrently": "^7.0.0",
+        "electron-rebuild": "^3.2.9"
     },
     "build": {
-      "appId": "com.info-dashboard",
-      "productName": "Info Dashboard",
-      "directories": {
-        "output": "dist"
-      },
-      "win": {
-        "target": "nsis"
-      }
+        "appId": "com.info-dashboard",
+        "productName": "Info Dashboard",
+        "directories": {
+            "output": "dist"
+        },
+        "win": {
+            "target": "nsis"
+        }
     }
-  }
-  
+}

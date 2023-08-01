@@ -19,6 +19,14 @@ body {
   text-align: center;
 }
 
+#buttons-container button {
+  font-size: 1.1em;
+}
+#terminal-container {
+  display: none;
+  margin-top: 20px;
+}
+
 .white-label {
   color: white;
 }
@@ -26,18 +34,32 @@ body {
 h6 {
   margin:0em;
   padding: 0em;
-  font-size: 0.7em;
-  margin-top: 0.7em;
+  font-size: 0.9em;
+  margin-top: 0.75em;
+  margin-bottom: 2;
+}
+#schedule-list .current {
+  background-color: rgba(128, 0, 0, 0.301);
+  color: white;
+}
+
+#start-day {
+  background-color: rgba(0, 128, 0, 0.558);
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+  border-radius: 0.45em;
+  padding: 0.5em;
 }
 
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
   padding: 1rem;
-  display: flex; 
+
   flex-direction: column; 
   align-items: center;
 }
@@ -48,6 +70,7 @@ h6 {
   align-items: center;
   font-size: 0.8em;
   text-align: center;
+  margin-top: -0.5em;
 }
 
 .clock {
@@ -62,4 +85,135 @@ h6 {
   position: relative;
   bottom: 0.2em;
   margin-left: 0em;
+}
+
+
+#assistant-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.assistant-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#startListeningBtn, #stopListeningBtn {
+  margin: 10px;
+}
+
+#transcriptions {
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+  margin-top: 20px;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+#todo-container, #schedule-container {
+  max-width: 50%;
+  box-sizing: border-box;
+}
+
+#schedule-container {
+  flex-direction: row;
+  font-size: 0.5em;
+  width: 300px;
+  margin-top: 0.7em;
+  margin-left: 1em;
+}
+
+#schedule-list {
+  list-style-type: none;
+  padding: 0;
+  flex-direction: row;
+  margin-left: 0em;
+  margin-top: 1.1em;
+}
+
+#schedule-list li {
+  padding: 0.1em;
+  font-size: 1em;
+  margin-bottom: 0em;
+  border-radius: 0em;
+  display: flex;
+  flex-direction: row;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+#schedule-list li:hover {
+  cursor: pointer;
+}
+
+
+.chat-container {
+  background-color: rgba(0, 0, 0, 1);
+  color: rgb(120, 200, 120);
+}
+
+.open-chat-button {
+  margin-left: 0em;
+  display: block;
+  background-color: rgba(0, 128, 0, 0.558);
+  font-weight: bold;
+  font-size: 0.8em;
+  border-radius: 0.45em;
+  padding: 0.25em;
+  margin-top: 0.75em;
+  }
+  
+  #user-input {
+  width: 700px;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5em;
+  }
+  
+  #assistant-container {
+  margin-top: 0.3em;
+  margin-bottom: 0.2em;
+  }
+
+  /*TODO WORK TIMERS START*/
+  .timer-container {
+    display: flex;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.6em;
+    width: 50%;
+  }
+  
+  .timer {
+    display: flex;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .timer span {
+    font-size: 2rem;
+    display: none;
+  }
+  
+  .timer button {
+    padding: 10px;
+    font-size: 1rem;
+    margin-right: 0.5em;
+    display: none;
+    border-radius: 0.5em;
+  }
+/*WORK TIMERS END*/  
+
+.containertodoscheduler {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  flex-direction: row;
 }

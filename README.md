@@ -20,6 +20,7 @@
   - type "npm install" 
   - close terminal
   - double click start_app.bat located in the root of the project "datamonitor/start_app.bat"
+  - exit the app by closing both terminals with "Ctrl + c" when each is selected, making sure both the server and client processes have stopped.
   
 <b><b>API key setup</b></b>
   - For weather data, you must obtain a key from https://api.openweathermap.org and edit the server.js file
@@ -34,3 +35,9 @@
     the same syntax and that kucoin lists the pair. The Bot section loops through all your active bots and displays
     the whole total and each individial crypto total.
   - Save the server and start the app
+
+  <b><b>Daily Scheduler setup</b></b>
+  - Open the app in vs code and navigate to line 157 in renderer.js within mainrepo/electron_app/renderer.js.
+  - Enter your own schedule values, keeping the formatting the same 2 digit time with "Min" or "Hours" after a space then "-" then your task. 
+  - A ding sound is played at the end of each task.
+  - After you finish entering your schedule, start the app and while the app is selected, enter "ctrl + shift + I" and paste in this command to clear the default schedule, then close the app by exiting both terminals with "ctrl + c" and start the app with your schedule loaded. Double click start day when you wake up, and over time, you will stay more on task.

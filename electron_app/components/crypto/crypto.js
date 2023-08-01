@@ -13,19 +13,19 @@ async function updateCrypto() {
 
       let hourTrendSymbol, dayTrendSymbol;
       if (hourTrend === 'upward') {
-        hourTrendSymbol = '<span class="green">↑</span>';
+        hourTrendSymbol = '<span class="green"></span>';
       } else if (hourTrend === 'downward') {
-        hourTrendSymbol = '<span class="red">↓</span>';
+        hourTrendSymbol = '<span class="red"></span>';
       } else {
-        hourTrendSymbol = '<span class="blue">-</span>';
+        hourTrendSymbol = '<span class="blue"></span>';
       }
 
       if (dayTrend === 'upward') {
-        dayTrendSymbol = '<span class="green">↑</span>';
+        dayTrendSymbol = '<span class="green"></span>';
       } else if (dayTrend === 'downward') {
-        dayTrendSymbol = '<span class="red">↓</span>';
+        dayTrendSymbol = '<span class="red"></span>';
       } else {
-        dayTrendSymbol = '<span class="blue">-</span>';
+        dayTrendSymbol = '<span class="blue"></span>';
       }
 
       return `<span class="white-label">${crypto.pair.split("/")[0]}</span> 

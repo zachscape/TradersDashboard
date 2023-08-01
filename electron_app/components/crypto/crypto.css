@@ -2,19 +2,22 @@
     -webkit-app-region: drag;
     margin-top: -0.2em;
     margin-bottom: 0em;
-  
-    padding-left: 1.7em;
-    padding-right: 1.7em;
+    font-size: 0.7em;
+    margin-left: 3em;
+    margin-right: 3em;
   }
 
   .red {
     color: red;
+    margin-top: -1em;
   }
 
   .green {
     color: rgb(120, 200, 120);
+    margin-top: -1em;
   }
 
   .blue {
     color: rgb(31, 102, 255);
+    margin-top: -1em;
   }

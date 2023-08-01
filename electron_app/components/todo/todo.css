@@ -2,22 +2,22 @@
 
 #todo-container {
     color: rgba(120, 200, 120, 0.822);
+    margin-left: -0.75em;
+    margin-top: 0.2em;
   }
   
   .todo-list {
     padding: 0;
     text-align: center;
     color: rgb(120, 200, 120);
-    margin-top: -10em;
-    padding-top: -10em;
   }
   li {
     list-style-type: none;
-    margin-left: -3rem;
+    margin-left: 0rem;
     margin-bottom: 0.5rem;
     color: rgb(120, 200, 120);
     text-align: center;
-    background-color: rgb(48, 48, 48);
+    background-color: rgba(128, 0, 0, 0.301);
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
@@ -26,7 +26,11 @@
     padding: 0.5rem;
     font-size: 0.8em;
     border: 2px solid transparent; /* Ensures that all list items have the same size whether they are active or not */
-    transition: border-color 0.3s; 
+    transition: gold 0.3s; 
+  }
+
+  #todo-container #todo-list {
+    margin-top: 0.75em;
   }
   
   input[type="text"] {
@@ -37,7 +41,10 @@
     background-color: rgb(67, 69, 71);
     color: rgb(149, 166, 149);
     box-sizing: border-box;
-    margin-top: 0.6em;
+    margin-top: -4em;
+    margin-left: 14.75em;
+    margin-bottom: -2em;
+    padding-bottom: -2em;
   }
   
   input[type="checkbox"] {
