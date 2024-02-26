@@ -1,6 +1,6 @@
 # datamonitor
 <p align="center">
-<img src="https://github.com/zachscape/TradersDashboard/blob/master/TradersDashboardImage.png" />
+<img src="https://github.com/zachscape/TradersDashboard/blob/main/TradersDashboardImage.png" />
 </p>
 Electron.js and Node.js application for Windows that provides real-time weather data and cryptocurrency prices and balances. It uses the OpenWeatherMap and MEXC APIs to fetch this data.
 
