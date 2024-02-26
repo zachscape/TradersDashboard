@@ -61,17 +61,46 @@
     <div id="crypto-container" class="box label-white center crypto"></div>
     <!-- Wrap the KucoinBots and projected income container in a new div -->
     <div class="bot-and-income-container">
-      <div id="kucoinBots-container" class="box label-white center bot"></div>
+      <div id="bingXBots-container" class="box label-white center bot">
+      </div>
+      <div id="profitPercent"></div>
+    
       <!-- <div id="projected-incomes" class="projInc label-white"></div> -->
+      <div class="box label-white center bot">
+        <button id="history-btn">History</button>
+      </div>
+      
+      
+    
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <input type="text" id="comment-input" placeholder="Enter your comment here" />
+    <span class="close">×</span>
+    <table id="history-table">
+      <thead>
+        <tr>    
+          <th class="history-date">Date</th>
+          <th>Total Balance (USD)</th>
+          <th class="comment">Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- The balance history will be inserted here -->
+      </tbody>
+    </table>
+    
+  </div>
+</div>
+
+
+
       <div id="assistant-container" class="box center">
         <div class="assistant-header">
           <input id="user-input" class="gpt-input offbtn" type="text" placeholder="Ask GPT" />
           <button id="enter-button" class="offbtn">Enter</button>
         </div>
         <!-- <div id="gpt-response"></div>  -->
-        <h6 class="goals">~ Balance ~ Growth ~ Awareness ~ Resiliance ~ Empowerment ~
 
-        </h6>
       </div>
     </div>
     <div id="terminal-container">
@@ -87,6 +116,8 @@
     </div>
     <div id="schedule-container" class="box center">
       <button id="start-day">Start Day</button>
+      <button id="mute-button">Mute</button>
+      <button id="schedules-button">Schedules</button>
       <ul id="schedule-list" class="center"></ul>
     </div>
   </div>

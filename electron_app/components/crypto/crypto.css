@@ -1,23 +1,23 @@
 .crypto {
-    -webkit-app-region: drag;
-    margin-top: -0.2em;
-    margin-bottom: 0em;
-    font-size: 0.7em;
-    margin-left: 3em;
-    margin-right: 3em;
-  }
+  -webkit-app-region: drag;
+  margin-top: -0.22em;
+  margin-bottom: 0em;
+  font-size: 0.45em;
+  margin-left: -0.3em;
+  margin-right: 0.5em;
+}
 
-  .red {
-    color: red;
-    margin-top: -1em;
-  }
+.red {
+  color: red;
+  margin-top: -1em;
+}
 
-  .green {
-    color: rgb(120, 200, 120);
-    margin-top: -1em;
-  }
+.green {
+  color: rgb(120, 200, 120);
+  margin-top: -1em;
+}
 
-  .blue {
-    color: rgb(31, 102, 255);
-    margin-top: -1em;
-  }
+.blue {
+  color: rgb(31, 102, 255);
+  margin-top: -1em;
+}

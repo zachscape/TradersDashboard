@@ -2,30 +2,35 @@
 
 #todo-container {
     color: rgba(120, 200, 120, 0.822);
-    margin-left: -0.75em;
-    margin-top: 0.2em;
+    margin-left: -0.9em; 
+    margin-top: -2.2em;
+  }
+
+#todoList input[type="checkbox"] {
+    display: none;
   }
   
   .todo-list {
     padding: 0;
-    text-align: center;
+    text-align: left;
     color: rgb(120, 200, 120);
   }
   li {
     list-style-type: none;
+    text-align: left;
     margin-left: 0rem;
     margin-bottom: 0.5rem;
     color: rgb(120, 200, 120);
     text-align: center;
-    background-color: rgba(128, 0, 0, 0.301);
+    background-color: rgba(28, 28, 28, 0.301);
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 800px;
+    width: 530px;
     padding: 0.5rem;
-    font-size: 0.8em;
-    border: 2px solid transparent; /* Ensures that all list items have the same size whether they are active or not */
+    font-size: 0.6em;
+    border: 2px solid transparent;
     transition: gold 0.3s; 
   }
 
@@ -37,16 +42,57 @@
     border-radius: 4px;
     padding: 0.5rem;
     font-size: 19px;
-    width: 60%;
+    width: 65%;
     background-color: rgb(67, 69, 71);
     color: rgb(149, 166, 149);
     box-sizing: border-box;
-    margin-top: -4em;
-    margin-left: 14.75em;
+    margin-top: -8em;
+    margin-left: 0.8em;
+    margin-right: 0em;
     margin-bottom: -2em;
     padding-bottom: -2em;
   }
-  
+
+  #todo-input {
+    margin-right: 1em;
+  }
+  /* The Modal (background) */
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+ 
+#history-table .history-date {
+ width: 50px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#bingXBots-container div p {
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-size: 0.45em;
+  text-align: center;
+  margin-left: 0em;
+  display: inline-block; /* Add this line */
+}
+#bingXBots-container {
+  text-align: center;
+  margin-top:-0.55em;
+  margin-left: -0.5em;
+}
+#bingXBots-container div {
+  text-align: center;
+}
   input[type="checkbox"] {
     width: 20px;
     height: 20px;
@@ -66,7 +112,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.6rem; /* Space between the buttons */
+    gap: 0.6rem; 
     margin-top: 1rem;
     flex-wrap: nowrap;
     margin-top: 0.5em;

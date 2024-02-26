@@ -1,19 +1,17 @@
+var dragSrcEl = null;
+
 function loadTodos(todoList, addTodoToList) {
   var todos = JSON.parse(localStorage.getItem('todos')) || [];
-  // Sort todos so that active todos are at the top
-  todos.sort(function(a, b) {
-    return b.active - a.active;
-  });
   todos.forEach(function(todo) {
-    addTodoToList({ text: todo.text, active: todo.active }, todoList);
+    addTodoToList({ text: todo.text }, todoList);
   });
 }
 
 function saveTodos(todoList) {
-  var todos = Array.from(todoList.children).map(function(li) {
+  var todos = Array.from(todoList.children).map(function(li, index) {
     return {
       text: li.querySelector('span').textContent,
-      active: li.querySelector('input[type="checkbox"]').checked
+      order: index
     };
   });
   localStorage.setItem('todos', JSON.stringify(todos));
@@ -21,40 +19,78 @@ function saveTodos(todoList) {
 
 function addTodoToList(todo, todoList) {
   var listItem = document.createElement('li');
+  listItem.draggable = true;
 
-  var checkbox = document.createElement('input');
-  checkbox.type = 'checkbox';
-  checkbox.checked = todo.active || false; // If todo is a string, this will be false
-  checkbox.addEventListener('change', function() {
-    listItem.style.border = this.checked ? '2px solid gold' : '';
-    if (this.checked) {
-      todoList.prepend(listItem);
-    } else {
-      todoList.appendChild(listItem);
-    }
-    saveTodos(todoList);
-  });
-  listItem.appendChild(checkbox);
-
-  var todoText = document.createElement('span');
-  todoText.textContent = typeof todo === 'string' ? todo : todo.text; // If todo is a string, use it directly
-  listItem.appendChild(todoText);
+  listItem.addEventListener('dragstart', handleDragStart, false);
+  listItem.addEventListener('dragover', handleDragOver, false);
+  listItem.addEventListener('dragend', handleDragEnd, false);
+  listItem.addEventListener('drop', handleDrop, false);
 
   var deleteButton = document.createElement('button');
   deleteButton.textContent = 'X';
-  deleteButton.addEventListener('click', function() {
+  deleteButton.className = 'delete-btn';
+
+  var todoText = document.createElement('span');
+  todoText.textContent = typeof todo === 'string' ? todo : todo.text;
+  todoText.style.paddingRight = '10px'; 
+
+  listItem.appendChild(deleteButton); 
+  listItem.appendChild(todoText);
+
+  todoList.appendChild(listItem);
+}
+function handleDragStart(e) {
+  this.style.opacity = '0.4';
+  dragSrcEl = this;
+
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/html', this.innerHTML);
+}
+
+function handleDragOver(e) {
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
+
+  e.dataTransfer.dropEffect = 'move';
+
+  return false;
+}
+
+function handleDragEnd(e) {
+  this.style.opacity = '1';
+
+  Array.from(this.parentNode.children).forEach(function (item) {
+    item.classList.remove('over');
+  });
+}
+
+function handleDrop(e) {
+  if (e.stopPropagation) {
+    e.stopPropagation();
+  }
+
+  if (dragSrcEl != this) {
+    this.parentNode.insertBefore(dragSrcEl, this.nextSibling);
+
+    Array.from(this.parentNode.children).forEach(function(li, index) {
+      li.order = index;
+    });
+
+    saveTodos(this.parentNode);
+  }
+
+  return false;
+}
+
+document.addEventListener('click', function(e) {
+  if (e.target && e.target.classList.contains('delete-btn')) {
+    var todoList = e.target.parentNode.parentNode;
+    var listItem = e.target.parentNode;
     todoList.removeChild(listItem);
     saveTodos(todoList);
-  });
-
-  listItem.appendChild(deleteButton);
-
-  if (checkbox.checked) {
-    todoList.prepend(listItem);
-  } else {
-    todoList.appendChild(listItem);
   }
-}
+});
 
 module.exports = {
   loadTodos: loadTodos,

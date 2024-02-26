@@ -6,7 +6,7 @@ app.disableHardwareAcceleration();
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 1170,
+    width: 865,
     height: 1250,
     titleBarStyle: 'hidden',
     webPreferences: {

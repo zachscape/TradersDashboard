@@ -23,15 +23,12 @@ function initAlarmController() {
             slider.classList.add("quiet");
         }
     }
-
-    // Call updateSliderClass() once to set the initial appearance
     updateSliderClass();
 
     document.getElementById("alarm-off").addEventListener("click", () => {
         stopAlarm();
     });
     document.addEventListener('keyup', function(event) {
-        // The keyCode for the 'Up Arrow' key is 38.
         if (event.keyCode === 38) {
             stopAlarm();
         }
@@ -60,7 +57,7 @@ function playAlarm() {
     alarmAudio.play();
 
     if (alarmTimeout) {
-        clearTimeout(alarmTimeout); // Clear the previous timeout if exists
+        clearTimeout(alarmTimeout);
     }
 
     alarmTimeout = setTimeout(() => {
@@ -75,11 +72,10 @@ function stopAlarm() {
         alarmAudio.currentTime = 0;
     }
     if (alarmTimeout) {
-        clearTimeout(alarmTimeout); // Clear the timeout when the alarm is stopped
+        clearTimeout(alarmTimeout);
     }
 }
 
-//Global escape key to stop alarm with Esc while tabbed
 ipcRenderer.on('stop-alarm', () => {
     stopAlarm();
 });
