@@ -68,9 +68,6 @@ app.get('/weather', cacheMiddleware(60), async (req, res) => {
   }
 });
 
-const MEXC_API_KEY = "mx0vglhiPnsr4wjXHD";
-const MEXC_SECRET = "f2d6bff780e94bc9a6fa3e5f39baec27";
-
 const MEXC_API_URL = 'https://www.mexc.com';
 
 const { Spot } = require('mexc-api');
